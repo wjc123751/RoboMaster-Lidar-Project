@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+        <!-- 加载参数文件 -->
+        <rosparam command="load" file="$(find depth_pkg)/yaml/parameters.yaml" />
+
+        <!-- 启动节点 -->
+        <node name="depth_node" pkg="depth_pkg" type="depth_node" output="screen" />
+</launch>

@@ -1,0 +1,42 @@
+# YAML 文件，用于设置ROS参数
+
+# 点云队列长度
+length_of_cloud_queue: 5
+
+# 相机dpi
+image_dpi:
+    image_width:    1440
+    image_height:   1080
+
+# 相机内参
+camera_matrix:
+    zerozero:   1785.12025
+    zerotwo:    769.9007
+    oneone:     1782.83017
+    onetwo:     545.44113
+    twotwo:     1.000000
+
+# 相机畸变
+distortion_coefficient:
+    zero:   -0.009408
+    one:    0.112613
+    two:    -0.001735
+    three:  0.010169
+    four:   0.000000
+
+# 相机外参
+uni_matrix:
+    zerozero:   -0.0034140384975
+    zeroone:    0.017754770277
+    zerotwo:    0.99983654288
+    zerothree:  -0.16446985801
+
+    onezero:   -0.9998516263
+    oneone:     -0.016942051981
+    onetwo:     -0.0031132385841
+    onethree:   -0.020931862095
+
+    twozero:    0.016884007846
+    twoone:     -0.99969882215
+    twotwo:     0.017809976753
+    twothree:   0.038986705069

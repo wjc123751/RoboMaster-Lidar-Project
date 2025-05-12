@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg = "tensorrt_pkg" type = "infer_node" name = "infer_node" output = "screen"/>
+
+</launch>

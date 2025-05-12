@@ -1,0 +1,25 @@
+{
+  "configurations": 
+  [
+    {
+      "browse": 
+      {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": 
+      [
+        "/opt/ros/melodic/include/**",
+        "/home/climber/RM2024Climber/src/hk_camera_pkg/include/**",
+        "/home/climber/RM2024Climber/src/tensorRT_pkg/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c11",
+      "cppStandard": "c++11"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg = "hk_camera_pkg" type = "hk_node" name = "hk_node" output = "screen"/>
+
+</launch>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+        <!-- 启动节点 -->
+        <node name="hk_calibrate_node" pkg="hk_calibrate_pkg" type="hk_calibrate_node" output="screen" />
+
+</launch>

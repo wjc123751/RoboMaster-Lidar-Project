@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": 
+	[
+		{
+			"type": "catkin_make",
+			"args": 
+			[
+				"--directory",
+				"/home/climber/RM2024Climber",
+				"-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+			],
+			"problemMatcher": 
+			[
+				"$catkin-gcc"
+			],
+			"group": "build",
+			"label": "catkin_make",
+			"presentation": 
+			{//关闭“终端将被任务重用，按任意键关闭”的提示
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",  //任务间不共享面板, 同一个任务共享相同面板.
+				"showReuseMessage": false, //控制是否显示“终端将被任务重用, 按任意键关闭”提示.
+				"clear": false
+			}
+		}
+	]
+}

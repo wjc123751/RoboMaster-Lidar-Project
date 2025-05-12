@@ -1,0 +1,6 @@
+# 我方颜色
+team_color: "bule"
+
+serial_port_CH343: "/dev/ttyCH343USB0"
+
+serial_port_ACM: "/dev/ttyACM0"

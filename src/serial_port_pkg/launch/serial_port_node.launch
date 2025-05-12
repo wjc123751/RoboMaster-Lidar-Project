@@ -1,0 +1,7 @@
+<launch>
+
+    <rosparam command="load" file="$(find serial_port_pkg)/yaml/serial_port.yaml" />
+
+    <node pkg = "serial_port_pkg" type = "serial_port_node" name = "serial_port_node" output = "screen"/>
+
+</launch>

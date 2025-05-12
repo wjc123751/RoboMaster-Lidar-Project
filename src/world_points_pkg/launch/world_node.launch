@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+        <!-- 加载参数文件 -->
+        <rosparam command="load" file="/home/climber/RM2024Climber/Yaml/hk_calibrate.yaml" />
+          <!-- 加载参数文件 -->
+        <rosparam command="load" file="/home/climber/RM2024Climber/src/depth_pkg/yaml/parameters.yaml" />
+        <!-- 启动节点 -->
+        <node name="world_node" pkg="world_points_pkg" type="world_node" output="screen" />
+
+</launch>

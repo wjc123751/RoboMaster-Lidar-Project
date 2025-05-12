@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+        <!-- 加载参数文件 -->
+        <rosparam command="load" file="$(find pub_depth_pkg)/yaml/parameters.yaml" />
+
+        <!-- 启动节点 -->
+        <node name="pub_depth_node" pkg="pub_depth_pkg" type="pub_depth_node" output="screen" />
+</launch>

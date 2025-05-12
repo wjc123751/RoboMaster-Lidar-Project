@@ -1,0 +1,16 @@
+roslaunch hk_camera_pkg hk_node.launch
+
+
+roslaunch livox_ros_driver livox_lidar.launch
+roslaunch pub_depth_pkg pub_depth_node.launch
+roslaunch world_points_pkg world_node.launch
+roslaunch serial_port_pkg serial_port_node.launch
+
+roslaunch hk_calibrate_pkg hk_calibrate_node.launch
+roslaunch depth_pkg depth_node.launch
+roslaunch livox_ros_driver livox_lidar_rviz.launch
+
+sudo chmod 777 /dev/ttyACM0
+sudo chmod 777 /dev/ttyCH343USB0
+
+

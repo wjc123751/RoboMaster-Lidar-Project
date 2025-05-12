@@ -1,0 +1,119 @@
+# RoboMaster Radar Station System
+
+![RoboMaster Award](https://img.shields.io/badge/Award-National_2nd_Place-ff69b4) 
+![TensorRT](https://img.shields.io/badge/Framework-TensorRT-76B900) 
+![ROS](https://img.shields.io/badge/Platform-ROS-22314E)
+
+多传感器融合的智能雷达站系统，荣获第二十届全国大学生机器人大赛RoboMaster机甲大师赛雷达组全国二等奖。
+
+## 📌 项目亮点
+- 多模态感知：工业相机(800万像素)与激光雷达联合标定
+- 高性能检测：YOLOv5+TensorRT实现60FPS实时目标检测
+- 精准定位：基于PnP算法的相机位姿估计，三维定位误差<5cm
+- 军工级稳定：C++/Python混合架构，连续运行72小时无内存泄漏
+- 可视化界面：Qt开发的多线程数据看板，支持实时态势感知
+
+## 🛠 技术栈
+### 感知层
+- 传感器标定：ROS Camera-LiDAR Calibration
+- 目标检测：YOLOv5s (TensorRT加速)
+- 点云处理：PCL 1.8.1
+
+### 定位层
+- 位姿估计：OpenCV SOLVEPNP_ITERATIVE
+- 坐标转换：TF2 (ROS)
+
+### 应用层
+- 核心框架：C++17 + ROS Noetic
+- 可视化界面：Qt 5.15 + QCustomPlot
+- 部署工具：ROS + NVIDIA NX
+
+## 🚀 快速开始
+### 环境要求
+- Ubuntu 20.04
+- ROS Noetic
+- NVIDIA Driver >= 470
+- CUDA 11.4
+
+### 安装步骤
+```bash
+# 克隆仓库
+git clone https://github.com/wjc123751/RoboMaster-Lidar-Project.git
+cd radar-system
+
+# 安装ROS依赖
+rosdep install --from-paths src --ignore-src -y
+
+# 安装Python依赖
+pip3 install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu113
+
+# 下载预训练模型
+wget http://example.com/models/yolov5s.trt -P models/
+
+# 启动雷达站核心
+roslaunch radar_bringup main.launch
+
+# 启动Qt可视化界面
+cd gui && ./RadarDashboard
+
+# 项目结构
+├─src
+│  ├─depth_pkg
+│  │  ├─include
+│  │  │  └─depth_pkg
+│  │  ├─launch
+│  │  ├─src
+│  │  └─yaml
+│  ├─hk_calibrate_pkg
+│  │  ├─include
+│  │  │  └─hk_calibrate_pkg
+│  │  ├─launch
+│  │  └─src
+│  ├─hk_camera_pkg
+│  │  ├─include
+│  │  │  └─hk_camera_pkg
+│  │  ├─launch
+│  │  └─src
+│  ├─livox_driver_pkg
+│  │  ├─cmake
+│  │  ├─common
+│  │  │  ├─comm
+│  │  │  ├─FastCRC
+│  │  │  ├─rapidjson
+│  │  │  │  ├─error
+│  │  │  │  ├─internal
+│  │  │  │  └─msinttypes
+│  │  │  └─rapidxml
+│  │  ├─config
+│  │  ├─launch
+│  │  ├─livox_ros_driver
+│  │  │  └─include
+│  │  ├─msg
+│  │  └─timesync
+│  │      └─user_uart
+│  ├─msgs_pkg
+│  │  └─msg
+│  ├─pub_depth_pkg
+│  │  ├─include
+│  │  │  └─pub_depth_pkg
+│  │  ├─launch
+│  │  ├─src
+│  │  └─yaml
+│  ├─serial_port_pkg
+│  │  ├─include
+│  │  │  └─serial_port_pkg
+│  │  ├─launch
+│  │  ├─src
+│  │  └─yaml
+│  ├─tensorrt_pkg
+│  │  ├─include
+│  │  │  ├─launch
+│  │  │  ├─tensorrt_pkg
+│  │  │  └─weight
+│  │  └─src
+│  └─world_points_pkg
+│      ├─include
+│      │  └─world_points_pkg
+│      ├─launch
+│      └─src
+└─Yaml
